@@ -1,0 +1,32 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+*.log*
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+#Maven
+target/
+release.properties
+
+#Others
+.classpath
+.project
+bin/
+.settings/
+.idea/
+*.iml
+/nbproject/
+pmd.html
+pmd.txt
+nbactions.xml
+.mvn/
+.git/

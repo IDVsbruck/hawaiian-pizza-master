@@ -1,0 +1,52 @@
+server:
+    port: 8080
+    servlet:
+        context-path: /
+
+spring:
+    application:
+        name: hawaiian-pizza
+    main:
+        allow-bean-definition-overriding: true
+    datasource:
+        url: jdbc:postgresql://localhost/pizzeria
+        username: pizzeria
+        password: gennaro
+        hikari:
+            maximum-pool-size: 5
+            pool-name: SpringBootHikariDatabaseConnectionPool
+            connection-test-query: SELECT 1
+        initialization-mode: always
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+        properties:
+            hibernate:
+                temp.use_jdbc_metadata_defaults: false
+                enable_lazy_load_no_trans: true
+                format_sql: true
+        open-in-view: false
+    mail:
+        host: mail.graphaware.com
+        port: 25
+        username: emailer@graphaware.com
+        password: p@ssw0rd
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+
+logging:
+    pattern:
+        console: "%d{yy-MM-dd HH:mm:ss.SSS} %clr(%-5level){yellow} [%-9.9t] %clr(%-48.48logger{39}){cyan} : %msg%n"
+    level:
+        com.graphware.pizzeria: DEBUG
+
+#spring.datasource.tomcat.test-while-idle=true
+#spring.datasource.tomcat.testOnBorrow=true
+#spring.datasource.tomcat.validationQuery=SELECT 1
